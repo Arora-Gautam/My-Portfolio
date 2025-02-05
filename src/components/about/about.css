@@ -1,0 +1,119 @@
+/* About Section Styles */ 
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh; /* Ensures full viewport height */
+}
+
+.introContent {
+    display: flex;
+    flex-direction: row-reverse; /* Keeps layout reversed */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Ensures the content wraps on small screens */
+}
+
+.imageWrapper {
+    flex: 1;
+    padding-left: 2rem; /* Adjusted padding */
+    min-width: 250px; /* Prevents the image from becoming too small on smaller screens */
+}
+
+.bg {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.textWrapper {
+    flex: 2;
+    text-align: left;
+    padding: 1rem;
+    max-width: 700px; /* Limits the text width for better readability */
+}
+
+.hello {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem; /* Adds a little space below the greeting */
+    display: block; /* Ensures it takes a full line */
+}
+
+.introText {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    display: block; /* Ensures this takes up its own line */
+}
+
+.introName {
+    color: #4e92b8;
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.introPara {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #333;
+    margin-top: 1.5rem;
+}
+
+.resumeBtn {
+    margin-top: 2rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.resumeBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .introContent {
+        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .imageWrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .bg {
+        width: 80%; /* Ensure the image is responsive */
+        margin: 0 auto;
+    }
+
+    .textWrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .introText {
+        font-size: 2rem;
+    }
+
+    .introPara {
+        font-size: 1rem;
+    }
+
+    .resumeBtn {
+        padding: 0.8rem 2rem;
+    }
+}

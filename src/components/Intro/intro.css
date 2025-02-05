@@ -1,0 +1,69 @@
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;  /* Reduced from 100vh to make space for the button */
+    text-align: center;
+    background-color: #f4f4f9;
+    padding: 1.5rem;  /* Reduced padding */
+    position: relative;
+}
+
+.introTitle {
+    font-size: 2.5rem;  /* Reduced size for better fit */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.greetingContainer {
+    margin-bottom: 1.5rem;  /* Reduced bottom margin */
+}
+
+.introText {
+    font-size: 1rem;  /* Reduced text size to fit better on small screens */
+    color: #555;
+    font-weight: 400;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Adjusted arrow button position */
+.arrowButton {
+    position: absolute;
+    bottom: 2rem;  /* Moved the button higher */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;  /* Increased the icon size */
+    color: #333;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.arrowButton::after {
+    content: '↓';
+    display: block;
+}
+
+.arrowButton:hover {
+    color: #007bff;
+    transform: translateY(5px);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.arrowButton {
+    animation: bounce 2s infinite;
+}
