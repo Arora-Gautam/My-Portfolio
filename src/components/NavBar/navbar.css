@@ -1,11 +1,11 @@
 /* Navbar Styles */
 .navbar {
-    background-color: #3b5998;  /* Dark Blue */
+    background-color: #4CAF50;  /* Green background */
     height: 5rem;
     width: 100%;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between; /* Align logo on the left and menu on the right */
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -13,30 +13,44 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     margin: 0 auto;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
 }
 
 /* Container for Navbar content */
 .navbarContent {
     width: 100%;
-    max-width: 1200px;  /* Maximum width of navbar content */
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 }
 
-/* Logo Styling */
 .navbar .logo {
-    width: 15vw;  /* Logo width set to 15% of the viewport width */
-    max-width: 120px;  /* Limits the maximum logo width to 120px */
-    height: auto;  /* Ensures the logo maintains its aspect ratio */
-    transition: width 0.3s ease;  /* Smooth transition for resizing */
+    width: 20vw;  /* Logo width set to 20% of the viewport width */
+    max-width: 180px;  /* Limits the maximum logo width */
+    height: 80px;  /* Set the fixed height of the logo */
+    transition: width 0.3s ease, height 0.3s ease, transform 0.6s ease;  /* Smooth transition for resizing and scaling */
+    animation: logoAnimation 1s ease-out;
+}
+
+/* Keyframes for Logo Animation */
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0.8);  /* Start smaller */
+        opacity: 0;  /* Start with no opacity */
+    }
+    100% {
+        transform: scale(1);  /* End at normal size */
+        opacity: 1;  /* Full opacity */
+    }
 }
 
 /* When scrolled, reduce the size of the logo */
 .navbar.scrolled .logo {
-    width: 12vw;   /* Logo width reduces to 12% of viewport width when scrolled */
-    max-width: 100px;  /* Limit max width to 100px when scrolled */
+    width: 15vw;   /* Logo width reduces to 15% of viewport width when scrolled */
+    max-width: 120px;  /* Limit max width to 120px when scrolled */
+    height: 80px;  /* Reduced height when scrolled */
 }
 
 /* Desktop Menu Styling */
@@ -143,14 +157,25 @@
 
 @media (max-width: 768px) {
     .navbar .logo {
-        width: 20vw;  /* 20% of viewport width for smaller screens */
-        max-width: 100px;  /* Limits the max width for mobile */
+        width: 25vw;  /* 25% of viewport width for smaller screens */
+        max-width: 140px;  /* Limits the max width for mobile */
     }
 }
 
 @media (max-width: 480px) {
     .navbar .logo {
-        width: 30vw;  /* 30% of viewport width for very small screens */
-        max-width: 80px;  /* Limits the max width even further */
+        width: 35vw;  /* 35% of viewport width for very small screens */
+        max-width: 100px;  /* Limits the max width even further */
+    }
+}
+
+@keyframes logoAnimation {
+    0% {
+        transform: scale(0.8);  /* Start smaller */
+        opacity: 0;  /* Start with no opacity */
+    }
+    100% {
+        transform: scale(1);  /* End at normal size */
+        opacity: 1;  /* Full opacity */
     }
 }

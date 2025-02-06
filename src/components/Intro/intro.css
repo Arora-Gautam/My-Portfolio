@@ -3,43 +3,82 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;  /* Reduced from 100vh to make space for the button */
+    min-height: 90vh;  /* Reduced from 100vh to 90vh */
     text-align: center;
-    background-color: #f4f4f9;
-    padding: 1.5rem;  /* Reduced padding */
+    background-color: #2c3e50;  /* Darker background color */
+    background-image: url('https://example.com/your-background-image.jpg'); /* Replace with your background image URL */
+    background-size: cover; /* Ensures the background covers the section */
+    background-position: center;
+    padding: 2rem;  /* Reduced padding to fit better */
     position: relative;
+    animation: fadeIn 2s ease-out;  /* Added fade-in animation for the section */
+}
+
+/* Animation for fading in the intro */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .introTitle {
-    font-size: 2.5rem;  /* Reduced size for better fit */
+    font-size: 3.5rem;  /* Slightly smaller size */
     font-weight: 600;
-    color: #333;
-    margin-bottom: 1rem;
+    color: #ecf0f1;  /* Light text color */
+    margin-bottom: 1rem;  /* Adjusted bottom margin */
+    animation: fadeInTitle 2s ease-out;  /* Added fade-in animation for the title */
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .greetingContainer {
-    margin-bottom: 1.5rem;  /* Reduced bottom margin */
+    margin-bottom: 1.5rem;  /* Adjusted margin */
 }
 
 .introText {
-    font-size: 1rem;  /* Reduced text size to fit better on small screens */
-    color: #555;
+    font-size: 1.3rem;  /* Reduced text size slightly */
+    color: #bdc3c7;  /* Lighter gray text for contrast */
     font-weight: 400;
-    max-width: 600px;
-    line-height: 1.6;
+    max-width: 650px;  /* Adjusted max width */
+    line-height: 1.8;  /* Increased line height for readability */
+    animation: fadeInText 2s ease-out;  /* Added fade-in animation for the text */
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Adjusted arrow button position */
 .arrowButton {
     position: absolute;
-    bottom: 2rem;  /* Moved the button higher */
+    bottom: 2rem;  /* Adjusted bottom margin */
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 3rem;  /* Increased the icon size */
-    color: #333;
-    padding: 10px;
+    font-size: 3.5rem;  /* Slightly reduced icon size */
+    color: #ecf0f1;  /* Light color for the arrow */
+    padding: 12px;
     transition: all 0.3s ease;
+    animation: bounce 2s infinite;  /* Added bounce animation */
 }
 
 .arrowButton::after {
@@ -48,7 +87,7 @@
 }
 
 .arrowButton:hover {
-    color: #007bff;
+    color: #ff6347;  /* Changed hover color to Tomato */
     transform: translateY(5px);
 }
 
@@ -62,8 +101,4 @@
     60% {
         transform: translateY(-5px);
     }
-}
-
-.arrowButton {
-    animation: bounce 2s infinite;
 }

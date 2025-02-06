@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import contactImg from '../../assets/contact.png';
 import logo from '../../assets/logo.png';
@@ -10,21 +10,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
 
     // Handle scroll event to add the 'scrolled' class once scrolled past a threshold
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true); // Shrink logo when scrolled
-            } else {
-                setScrolled(false); // Reset to original size when near top
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
+    
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             {/* Logo */}
