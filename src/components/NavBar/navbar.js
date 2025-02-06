@@ -7,7 +7,7 @@ import './navbar.css';
 
 const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled] = useState(false);
 
     // Handle scroll event to add the 'scrolled' class once scrolled past a threshold
     
