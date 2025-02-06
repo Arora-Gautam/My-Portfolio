@@ -1,145 +1,196 @@
 /*
-
 Skills.css
 Gautam Arora
 301497001
 05 Feb 2025
-
 */
+
 #skills {
-    overflow: hidden;
-    width: 100vw;
-    max-width: 65rem;
+    margin: 0;
+    min-height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center content vertically */
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    overflow: hidden;
 }
 
 .skillTitle {
-    font-size: 3rem;
-    font-weight: 600;
-    padding-top: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    animation: fadeIn 1s ease-out;
 }
 
 .skillDesc {
-    font-weight: 400;
-    font-size: 1rem;
-    max-width: 51rem;
-    padding: 0 2rem;
-}
-
-.skillBars {
-    margin: 1.5rem;
-    width: 100vw;
-    max-width: 80%;
-    text-align: left;
-}
-
-.skillBar {
-    display: flex;
-    margin: 1rem;
-    width: 15vw;
-    height: 7vw;
-    padding: 1.5rem 2rem;
-    border-radius: 0.5rem;
-    background: rgb(50, 50, 50);
-}
-
-.skillBarImg {
-    object-fit: cover;
-    height: 3rem;
-    width: 3rem;
-    margin-right: 2rem;
-}
-
-.skillBarText>h2 {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.skillBarText>p {
-    font-size: 0.9rem;
-    font-weight: 200;
+    font-size: 1.4rem;
+    max-width: 80rem;
+    margin-bottom: 4rem;
+    line-height: 1.7;
+    color: #e6e6e6;
+    animation: fadeIn 1s ease-out 0.2s;
+    animation-fill-mode: backwards;
 }
 
 .btnContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 1rem; /* Add equal padding on both sides */
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.btnRowHeader {
+    font-size: 2rem;
+    color: #3498db;
+    margin: 2rem 0;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.btnRowHeader::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #3498db 50%, transparent 100%);
 }
 
 .btnRow {
     display: flex;
-    justify-content: flex-start; /* Adjust alignment of buttons */
-    margin-bottom: 0.5rem; /* Add margin between rows */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    width: 40%; /* Set a fixed width for the row */
-}
-
-.btnRowHeader {
-    font-weight: bold;
-    margin-bottom: 1rem; /* Add spacing below the header */
-    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .btn {
-    background: white;
-    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 2rem;
-    margin: 0 0.25rem; /* Adjust margin */
-    white-space: nowrap; /* Prevent button text from wrapping */
-    min-width: 8rem; /* Set minimum width for buttons */
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    min-width: 160px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    background: rgba(52, 152, 219, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #3498db;
 }
 
 .btnImg {
-    object-fit: cover;
-    margin: 0 0.25rem;
-    height: 1rem;
-    margin-top: 0.2rem;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-@media screen and (max-width: 720px) {
+.btn:hover .btnImg {
+    transform: scale(1.2) rotate(10deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .skillTitle {
+        font-size: 3rem;
+    }
+    
+    .skillDesc {
+        font-size: 1.2rem;
+    }
+    
+    .btnContainer {
+        padding: 1.5rem;
+    }
+    
+    .btnRowHeader {
+        font-size: 1.6rem;
+    }
+    
     .btn {
-        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
-        font-size: 0.8rem; /* Reduce font size for smaller screens */
+        min-width: 140px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 }
 
 @media screen and (max-width: 480px) {
+    #skills {
+        padding: 4rem 1rem;
+    }
+    
+    .skillTitle {
+        font-size: 2.5rem;
+    }
+    
+    .skillDesc {
+        font-size: 1rem;
+    }
+    
+    .btnRowHeader {
+        font-size: 1.4rem;
+    }
+    
     .btn {
-        padding: 0.75rem 1rem; /* Adjust padding for smaller screens */
+        min-width: 120px;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
     }
-
+    
     .btnImg {
-        height: 0.75rem; /* Adjust image height for smaller screens */
-    }
-}
-
-@media screen and (max-width:720px) {
-    .skillBarText>p {
-        font-size: 2vw;
-    }
-}
-
-@media screen and (max-width:480px) {
-    .skillBarText>p {
-        font-size: 3vw;
-    }
-    .skillBarText>h2 {
-        font-size: 5vw;
-    }
-}
-@media screen and (min-width: 768px) {
-    .btnRow {
-        overflow-x: visible; /* Remove horizontal scrolling for larger screens */
-        width: 100%;
-        justify-content: center; /* Adjust alignment of buttons */
+        width: 24px;
+        height: 24px;
     }
 }

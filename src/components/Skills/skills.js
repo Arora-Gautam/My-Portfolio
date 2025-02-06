@@ -40,7 +40,11 @@ const Skills = () => {
     return (
         <section id='skills'>
             <span className='skillTitle'>What I do</span>
-            <span className='skillDesc'>As a seasoned software engineer and iOS developer, I specialize in crafting elegant and efficient solutions for applications. With a wealth of experience spanning 3 years, my expertise lies in harnessing technologies to deliver seamless user experiences across various platforms. My skill set encompasses a wide range of programming languages, tools, and frameworks, enabling me to tackle diverse challenges in software development with precision and creativity.</span>
+            <span className='skillDesc'>Apart from being a Centennial College Student studying software engineer - AI
+                and as a seasoned computer engineer. I have skills in various domain and technologies
+                and able to contribute lot to projects. Here are some of the technologies I have worked and experienced with:
+
+            </span>
             <div className='btnContainer'>
             <div className='btnRowHeader'><br/><br/><br/>---------- PROGRAMMING ----------<br/></div>
                 <div className='btnRow'>

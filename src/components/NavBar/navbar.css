@@ -2,8 +2,8 @@
 .navbar {
     background-color: #4CAF50;  /* Green background */
     height: 5rem;
-    width: 100%;
-    padding: 1rem 2rem;
+    width: 100%;  /* Full viewport width for the navbar */
+    padding: 1rem 3rem;  /* Increased horizontal padding */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,38 +18,27 @@
 
 /* Container for Navbar content */
 .navbarContent {
-    width: 100%;
-    max-width: 1200px;
+    width: 100%;  /* Allow content to span the full width of the navbar */
+    max-width: 1600px;  /* Increase max-width for larger screens */
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
 }
 
+/* Logo styling */
 .navbar .logo {
-    width: 20vw;  /* Logo width set to 20% of the viewport width */
-    max-width: 180px;  /* Limits the maximum logo width */
-    height: 80px;  /* Set the fixed height of the logo */
+    width: 15vw;  /* Logo width set to 15% of the viewport width */
+    max-width: 150px;  /* Increased max-width for larger screens */
+    height: 80px;  /* Adjusted height for larger screens */
     transition: width 0.3s ease, height 0.3s ease, transform 0.6s ease;  /* Smooth transition for resizing and scaling */
-    animation: logoAnimation 1s ease-out;
-}
-
-/* Keyframes for Logo Animation */
-@keyframes logoAnimation {
-    0% {
-        transform: scale(0.8);  /* Start smaller */
-        opacity: 0;  /* Start with no opacity */
-    }
-    100% {
-        transform: scale(1);  /* End at normal size */
-        opacity: 1;  /* Full opacity */
-    }
+    animation: logoAnimation 1s ease-out;  /* Logo animation */
 }
 
 /* When scrolled, reduce the size of the logo */
 .navbar.scrolled .logo {
-    width: 15vw;   /* Logo width reduces to 15% of viewport width when scrolled */
-    max-width: 120px;  /* Limit max width to 120px when scrolled */
+    width: 12vw;   /* Logo width reduces to 12% of viewport width when scrolled */
+    max-width: 150px;  /* Limit max width to 150px when scrolled */
     height: 80px;  /* Reduced height when scrolled */
 }
 
@@ -61,9 +50,9 @@
 }
 
 .desktopMenuListItem {
-    margin: 0 1.5rem;
+    margin: 0 2rem;  /* Increased margin for larger screen */
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.4rem;  /* Larger font size */
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -79,8 +68,8 @@
 .desktopMenuBtn {
     background-color: #FF6347;  /* Tomato Red */
     color: white;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
+    padding: 1rem 3rem;  /* Larger padding for buttons */
+    font-size: 1.3rem;  /* Increased font size */
     border: none;
     border-radius: 30px;
     display: flex;
@@ -96,7 +85,7 @@
 
 .desktopMenuImg {
     margin-right: 0.5rem;
-    height: 1.2rem;
+    height: 1.5rem;  /* Increased icon size */
 }
 
 /* Mobile Menu (Hidden by Default) */
@@ -124,7 +113,7 @@
 .listItem {
     color: #3b5998;  /* Dark Blue */
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;  /* Increased font size for mobile */
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -157,25 +146,14 @@
 
 @media (max-width: 768px) {
     .navbar .logo {
-        width: 25vw;  /* 25% of viewport width for smaller screens */
-        max-width: 140px;  /* Limits the max width for mobile */
+        width: 30vw;  /* 30% of viewport width for smaller screens */
+        max-width: 180px;  /* Limits the max width for mobile */
     }
 }
 
 @media (max-width: 480px) {
     .navbar .logo {
-        width: 35vw;  /* 35% of viewport width for very small screens */
-        max-width: 100px;  /* Limits the max width even further */
-    }
-}
-
-@keyframes logoAnimation {
-    0% {
-        transform: scale(0.8);  /* Start smaller */
-        opacity: 0;  /* Start with no opacity */
-    }
-    100% {
-        transform: scale(1);  /* End at normal size */
-        opacity: 1;  /* Full opacity */
+        width: 40vw;  /* 40% of viewport width for very small screens */
+        max-width: 120px;  /* Limits the max width even further */
     }
 }
